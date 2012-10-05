@@ -15,9 +15,11 @@
 #
 def triangle(a, b, c)
   t=[a,b,c]
-  a=t.uniq.size
+  raise TriangleError.new("Triangles cannot have 0 length or negative sides") if(t.min <=0)
+  t.sort!
+  raise TriangleError.new("Triangles cannot have sides that do not add to the maximum side.") unless((t[0]+t[1]) > t[2])
   
-  case a
+  case t.uniq.size
   when 1
     return :equilateral
   when 2
