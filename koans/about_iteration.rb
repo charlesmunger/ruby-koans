@@ -91,6 +91,7 @@ class AboutIteration < EdgeCase::Koan
 
     # Extra Credit:
     # Describe in your own words what inject does.
+    # 
     # Inject is equivalent to the foldLeft operation in functional programming
     # languages.
   end
