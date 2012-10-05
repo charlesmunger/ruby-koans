@@ -19,10 +19,6 @@ class Proxy
     @messages = []
     # ADD MORE CODE HERE
   end
-
-  def respond_to?(symbol)
-    super(symbol)
-  end
   
   def method_missing(symbol, *args)
     @messages << symbol
