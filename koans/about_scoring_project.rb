@@ -31,6 +31,12 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 def score(dice)
   # You need to write this method
+  dice.uniq.inject(0) { |sum,num| 
+    count = dice.count(num)
+    sum += (num == 1 ? 1000:100) * num if(count >= 3)
+    sum += (num == 1?100:50)*(count % 3) if(num == 5 || num == 1)
+    sum
+  }
 end
 
 class AboutScoringProject < EdgeCase::Koan
